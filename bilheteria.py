@@ -9,13 +9,16 @@ def verificador(idade):
         return "Acesso Negado"
 #aluno3: Mensagem de Retorno
 def gerar_mensagem(status):
-    if status == "Acesso Autorizado":
+    if status == "Acesso permitido":
         return "Tenha uma ótima sessão!"
     else:
-        return "Sentimos, mas você não tem idade minima."
+        return "Sentimos muito, mas você não tem idade minima."
 #aluno4: Funçao do algoritmo
 filme_enredo = input("Digite o filme escolhido: ")
 idade_entrada = int(input("Digite sua idade: "))
-nome_final = formatar(filme_enredo)
+nome_filme = formatar(filme_enredo)
 status_acesso = verificador(idade_entrada)
 mensagem = gerar_mensagem(status_acesso)
+print(f"Filme: {nome_filme}")
+print(f"Status: {status_acesso}")
+print(f"Mensagem: {mensagem}")
