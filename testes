@@ -1,0 +1,19 @@
+def obeso_ou_nao(gordo):
+     if gordo <= 25:
+          return("NORMAL")
+     else:
+          return("ACIMA DO PESO")
+def gerar_aviso(status):
+    if status == "NORMAL":
+         return("Parabéns! Continue mantendo hábitos saudáveis.")
+    elif status == "ACIMA DO PESO":
+          return("Procure praticar atividades físicas e manter uma alimentação equilibrada.")
+
+
+
+fat = float(input("Qual o seu peso? "))
+a = obeso_ou_nao(fat)
+b = gerar_aviso(a)
+
+print(f"Status: {a}")
+print(b)
