@@ -1,3 +1,6 @@
+def calcular_imc(p, a):
+    imc = p / (a ** 2)
+    return imc
 def obeso_ou_nao(gordo):
      if gordo <= 25:
           return("NORMAL")
@@ -8,12 +11,11 @@ def gerar_aviso(status):
          return("Parabéns! Continue mantendo hábitos saudáveis.")
     elif status == "ACIMA DO PESO":
           return("Procure praticar atividades físicas e manter uma alimentação equilibrada.")
-
-
-
-fat = float(input("Qual o seu peso? "))
-a = obeso_ou_nao(fat)
-b = gerar_aviso(a)
-
-print(f"Status: {a}")
-print(b)
+peso = float(input("Digite seu peso em kg:"))
+altura = float(input("Digite sua altura em metros:"))
+imc_calculado = calcular_imc(peso, altura)
+status_imc = obeso_ou_nao(imc_calculado)
+aviso = gerar_aviso(status_imc)
+print(f"Seu IMC é:{imc_calculado:.2f}")
+print(f"status: {status_imc}")
+print(f"aviso: {aviso}")
