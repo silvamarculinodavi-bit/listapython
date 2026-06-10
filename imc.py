@@ -1,14 +1,25 @@
-#etapa1--
-def calcular_imc(imc):
-    imc = peso/(altura * 2)
+#calculo do imc--
+def calculo_imc(peso, altura):
+    imc = peso / (altura * altura)
+    return imc
 
-#etapa2--
-def teste_imc(valor_imc)
+#classificar o imc--
+def classificar_imc(valor_imc):
     if valor_imc >= 25:
-        return("Procure um Médico")
+        return "ACIMA DO PESO"
     else:
-        return("Peso Normal")
+        return "PESO NORMAL"
 
-#etapa3--
-def resultado_imc(mensagem)
-    if mensagem == "Procure um Médico"
+#mensagem de saida--
+def mensagem(status):
+    if status == "ACIMA DO PESO":
+        return "Procure um Médico"
+    else:
+        return "Continue assim"
+
+valor_peso = float(input("Qual seu peso? "))
+valor_altura = float(input("Qual a sua altura? "))
+calculo = calculo_imc(valor_peso, valor_altura)
+classificar = classificar_imc(calculo)
+mensagem_valor = mensagem(classificar)
+print(mensagem_valor)
